@@ -5,6 +5,6 @@ function SendPHP() {
       alert(xmlhttp.responseText);
     }
   }
-  xmlhttp.open("GET","testdata.txt",true);
+  xmlhttp.open("GET","testdata.php",true);
   xmlhttp.send();
 }
