@@ -23,5 +23,5 @@ $fp = fopen($filename,"w");
 fputs($fp,$insertvote);
 fclose($fp);
 
-echo sprintf("Yes: %u, No: %s",$yes,$no);
+echo "Hello World!";
 ?>
