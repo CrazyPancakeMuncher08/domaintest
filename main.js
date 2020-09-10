@@ -1,11 +1,15 @@
 function Vote(integer) {
-    var xmlhttp=new XMLHttpRequest();
-  xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
-      alert(this.responseText)
-      //document.getElementById("poll").innerHTML=this.responseText;
-    }
+    $.ajax({
+  url: 'vote.php',
+  type: 'GET',
+  data: 'vote='+integer,
+  success: function(data) {
+	//called when successful
+	$('#poll').html(data);
+  },
+  error: function(e) {
+	//called when there is an error
+	console.log(e.message);
   }
-  xmlhttp.open("GET","vote.php?vote="+integer,true);
-  xmlhttp.send();
+});
 }
